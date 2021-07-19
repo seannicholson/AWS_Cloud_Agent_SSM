@@ -7,7 +7,7 @@ _**THIS SCRIPT IS PROVIDED TO YOU "AS IS."  TO THE EXTENT PERMITTED BY LAW, QUAL
 ## Usage:
 Follow the steps mentioned below to utilize the document to install Qualys Cloud Agent.
 
-1.	Open the AWS Systems Manager console. 
+1.	Open the AWS Systems Manager console.
 
 2.	In the navigation pane under Systems Manager Services, choose Run Command.
 
@@ -19,8 +19,10 @@ Follow the steps mentioned below to utilize the document to install Qualys Cloud
 There are two required options which you must provide.
 
   **ActivationID:** An ID to authenticate agents so that they could be grouped and bind to your account
- 
+
   **CustomerID:** An ID to identify your account.
+
+  **WebServiceUri:** Specify the WebServiceUri for Windows Cloud Agent after version 4.3, for versions prior 4.3, remove the reference to WebServiceUri on line 190 of qualys-deploy-ssm.txt "WebServiceUri={{ WebServiceUri }}" -- Format of WebServiceUri is <platform_url>/CloudAgent/ and platform_url can be found at https://www.qualys.com/platform-identification/ under Cloud Agent section
 
 ![parameters](/images/parameters.png?raw=true "Parameters")
 
@@ -36,11 +38,11 @@ The SSM Document is tested on following Operating systems:
 
 *	Amazon Linux 2
 
-* CentOS Linux 7.5.1804 (Core) 
+* CentOS Linux 7.5.1804 (Core)
 
-*	Red Hat Enterprise Linux Server 7.5 
+*	Red Hat Enterprise Linux Server 7.5
 
-*	Ubuntu Linux 14.04.5 
+*	Ubuntu Linux 14.04.5
 
 *	Microsoft Windows Server 2012 and their service packs
 

@@ -10,6 +10,10 @@
       "type": "String",
       "description": "(Required) Enter CustomerID as displayed in your account"
     },
+    "WebServiceUri": {
+      "type": "String",
+      "description": "(Required for Windows Installation version v4.3 and later) Enter WebServiceUri in format of <platform_url>/CloudAgent/, platform URL can be found at https://www.qualys.com/platform-identification/"
+    },
     "AgentLocationWindows": {
       "type": "String",
       "default": "",
@@ -183,7 +187,7 @@
           "# Install the Qualys Cloud Agent",
           "Try",
           "{",
-          "     & $agentInstallerlog CustomerId={{ CustomerID }} ActivationId={{ ActivationID }}",
+          "     & $agentInstallerlog CustomerId={{ CustomerID }} ActivationId={{ ActivationID }} WebServiceUri={{ WebServiceUri }}",
           "}",
           "Catch",
           "{",
