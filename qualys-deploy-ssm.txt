@@ -4,11 +4,11 @@
   "parameters": {
     "ActivationID": {
       "type": "String",
-      "description": "(Required) Enter ActivationID obtained from Qualys CP "
+      "description": "(Required) Enter ActivationID obtained from Qualys CP (include {}'s)"
     },
     "CustomerID": {
       "type": "String",
-      "description": "(Required) Enter CustomerID as displayed in your account"
+      "description": "(Required) Enter CustomerID as displayed in your account (include {}'s)"
     },
     "WebServiceUri": {
       "type": "String",
