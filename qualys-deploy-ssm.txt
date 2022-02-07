@@ -4,11 +4,11 @@
   "parameters": {
     "ActivationID": {
       "type": "String",
-      "description": "(Required) Enter ActivationID obtained from Qualys CP (include {}'s)"
+      "description": "(Required) Enter ActivationID obtained from Qualys CP (do not include {})"
     },
     "CustomerID": {
       "type": "String",
-      "description": "(Required) Enter CustomerID as displayed in your account (include {}'s)"
+      "description": "(Required) Enter CustomerID as displayed in your account (do not include {})"
     },
     "WebServiceUri": {
       "type": "String",
@@ -185,9 +185,11 @@
           "     exit 5",
           "}",
           "# Install the Qualys Cloud Agent",
+          "$customerID = -join('{', '{{ CustomerID }}', '}')",
+          "$activationID = -join('{', '{{ ActivationID }}', '}')",
           "Try",
           "{",
-          "     & $agentInstallerlog CustomerId=\"{{ CustomerID }}\" ActivationId=\"{{ ActivationID }}\" WebServiceUri={{ WebServiceUri }}",
+          "     & $agentInstallerlog CustomerId=\"$customerID\" ActivationId=\"$activationID\" WebServiceUri={{ WebServiceUri }}",
           "}",
           "Catch",
           "{",
